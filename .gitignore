@@ -1,3 +1,7 @@
-*.class
-.cph/*
-.DS_Store
+/*.*
+.*
+
+# Exceptions
+!README.md
+!.gitignore
+!.github
