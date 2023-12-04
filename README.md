@@ -76,3 +76,18 @@
 | | 백준 | [텀 프로젝트](https://www.acmicpc.net/problem/9466) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
 | |     | [보석 도둑](https://www.acmicpc.net/problem/1202) | <img src="https://static.solved.ac/tier_small/14.svg" height="25" align="center"/> |
 | |     | [구슬 탈출 2](https://www.acmicpc.net/problem/13460) | <img src="https://static.solved.ac/tier_small/15.svg" height="25" align="center"/> |
+| **week02** <br> (23.12.04 ~ 23.12.10) | 프로그래머스 | [이모티콘 할인행사](https://school.programmers.co.kr/learn/courses/30/lessons/150368) | Lv.2 |
+| |     | [경주로 건설](https://school.programmers.co.kr/learn/courses/30/lessons/67259) | Lv.3 |
+| | 백준 | [공유기 설치](https://www.acmicpc.net/problem/2110) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
+| |     | [연구소 2](https://www.acmicpc.net/problem/17141) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
+| |     | [Two Dots](https://www.acmicpc.net/problem/16929) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
+
+<!-- problem table template
+
+| **week❓** <br> (24.❓.❓ ~ 24.❓.❓) | 프로그래머스 | [❓제목](❓링크) | Lv.❓ |
+| |     | [❓제목](❓링크) | Lv.❓ |
+| | 백준 | [❓제목](https://www.acmicpc.net/problem/❓) | <img src="https://static.solved.ac/tier_small/❓.svg" height="25" align="center"/> |
+| |     | [❓제목](https://www.acmicpc.net/problem/❓) | <img src="https://static.solved.ac/tier_small/❓.svg" height="25" align="center"/> |
+| |     | [❓제목](https://www.acmicpc.net/problem/❓) | <img src="https://static.solved.ac/tier_small/❓.svg" height="25" align="center"/> |
+
+-->
