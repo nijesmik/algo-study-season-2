@@ -14,7 +14,7 @@ public class 공유기_설치 {
             pos[i] = sc.nextInt();
         }
         Arrays.sort(pos);
-        int start = pos[0], end = pos[N-1], ans = 0;
+        int start = 1, end = pos[N-1] - pos[0], ans = 0;
         while (start <= end) {
             int mid = (start + end) / 2;
             if (calcCount(mid) >= C) {
