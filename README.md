@@ -81,6 +81,11 @@
 | | 백준 | [공유기 설치](https://www.acmicpc.net/problem/2110) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
 | |     | [연구소 2](https://www.acmicpc.net/problem/17141) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
 | |     | [Two Dots](https://www.acmicpc.net/problem/16929) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
+| **week03** <br> (23.12.11 ~ 23.12.17) | 프로그래머스 | [단체사진 찍기](https://school.programmers.co.kr/learn/courses/30/lessons/1835) | Lv.2 |
+| |     | [가장 먼 노드](https://school.programmers.co.kr/learn/courses/30/lessons/49189) | Lv.3 |
+| | 백준 | [연구소 3](https://www.acmicpc.net/problem/17142) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
+| |     | [버블 소트](https://www.acmicpc.net/problem/1377) | <img src="https://static.solved.ac/tier_small/14.svg" height="25" align="center"/> |
+| |     | [낚시왕](https://www.acmicpc.net/problem/17143) | <img src="https://static.solved.ac/tier_small/15.svg" height="25" align="center"/> |
 
 <!-- problem table template
 
