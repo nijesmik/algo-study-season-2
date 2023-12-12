@@ -64,6 +64,9 @@ static int N, M, V, ans, blank;
         int time = 0;
         while (total > 0 && !q.isEmpty()) {
             time++;
+            if (time >= ans) {
+                return;
+            }
             int size = q.size();
             while (size-- > 0) {
                 Pos cur = q.poll();
@@ -75,16 +78,9 @@ static int N, M, V, ans, blank;
                     if (map[nr][nc] == 0) {
                         total--;
                     }
-                    if (total == 0) {
-                        ans = Math.min(time, ans);
-                        return;
-                    }
                     visited[nr][nc] = true;
                     q.add(new Pos(nr, nc));
                 }
-            }
-            if (time >= ans) {
-                return;
             }
         }
         if (total == 0) {
