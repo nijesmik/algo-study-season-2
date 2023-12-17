@@ -1,75 +1,112 @@
-package y23Dec01;
+package y23Dec02;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class Baek16929 {
-
     static int N;
     static int M;
+    static int[][] vt;
+    static char[][] bd;
 
-    //다시 풀어야 됨 -> 아이디어만 공유하고 싶어서...
-    
+    static int[] dx = new int[]{1,-1,0,0};
+    static int[] dy = new int[]{0,0,1,-1};
+
     public static void main(String[] args) throws Exception {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(bf.readLine());
+
+        mapIdx = new HashMap<>();
+        mapIdx.put(0,1);
+        mapIdx.put(1,0);
+        mapIdx.put(2,3);
+        mapIdx.put(3,2);
+
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
 
-       char[][] bd = new char[N][M];
-       int [][] par = new int[N][M];
+        bd = new char[N][M];
+        vt = new int[N][M];
         String str;
         for (int i = 0; i < N; i++) {
             str = bf.readLine();
             for (int j = 0; j < M; j++) {
-            bd[i][j] = str.charAt(j);
-            par[i][j] = N*i + j;
+                bd[i][j] = str.charAt(j);
             }
         }
-
-        int[] dx = new int[]{-1,0,1,0};
-        int[] dy = new int[]{0,-1,0,1};
         boolean chk = false;
-allfor:   for (int i = 0; i < N; i++) {
+ all:   for (int i = 0; i < N; i++) {
             for (int j = 0; j < M; j++) {
-
-                for (int k = 0; k < N; k++) {
-                    System.out.println(Arrays.toString(par[k]));;
-                }
-                System.out.println("---------");
-                if(j!=0 && i!=0){
-                    if(bd[i+dx[0]][j] == bd[i][j]&&bd[i][j+dy[1]] == bd[i][j]
-                    &&par[i+dx[0]][j] == par[i][j+dy[1]]
-                    ){
-                        chk = true;
-                        break allfor;
-                    }
-                }
-                int nx = 0;
-                int ny = 0;
-                int p1;
-                int p2;
-                for(int k=0;k<4;k++){
-                    nx = i + dx[k];
-                    ny = j + dy[k];
-                    if(nx < 0 || nx >= N || ny < 0 || ny >= M || bd[nx][ny] != bd[i][j]){
-                        continue ;
-                    }
-                    par[i][j] = Math.min(par[nx][ny],par[i][j]);
-                    par[nx][ny] = par[i][j];
+                if(vt[i][j] == 1) continue ;
+                if(bfs(i,j,bd[i][j])){
+                    chk = true;
+                    break all;
                 }
 
             }
         }
 
-        if(chk){
-            System.out.println("Yes");
-        }else{
-            System.out.println("No");
+//        for (int i = 0; i < N; i++) {
+//            System.out.println(Arrays.toString(bd[i]));
+//        }
+
+
+        if(chk) System.out.println("Yes");
+        else System.out.println("No");
+
+    }
+
+
+    static Map<Integer,Integer> mapIdx;
+    static public boolean bfs( int i, int j, char c){
+
+        boolean chk = false;
+        Deque<pos> qu = new ArrayDeque<>();
+        vt[i][j] = 1;
+        qu.add(new pos(i,j,c, -1));
+
+        pos tmp;
+        while(!qu.isEmpty()){
+//            for (int l = 0; l < N; l++) {
+//                System.out.println(Arrays.toString(vt[l]));
+//
+//            }
+//            System.out.println("-----------------");
+
+            tmp = qu.poll();
+
+            for (int k = 0; k < 4; k++) {
+                if(k == tmp.dir)continue;
+                int nx = tmp.x + dx[k];
+                int ny = tmp.y + dy[k];
+                if(nx < 0 || ny < 0 || nx >= N || ny >= M)continue;
+                if(bd[nx][ny] != tmp.c)continue;
+                if(vt[nx][ny] == 1 ){
+                    chk = true;
+                    continue;
+                };
+                vt[nx][ny] = 1;
+                qu.add(new pos(nx, ny, bd[nx][ny], mapIdx.get(k)));
+            }
+
+
         }
 
+        return chk;
+    }
+
+    static class pos{
+        int x, y;
+        char c;
+        int dir;
+
+        public pos(int x, int y, char c, int dir) {
+            this.x = x;
+            this.y = y;
+            this.c = c;
+            this.dir = dir;
+        }
     }
 
 }
