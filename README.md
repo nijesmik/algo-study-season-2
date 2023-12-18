@@ -86,6 +86,11 @@
 | | 백준 | [연구소 3](https://www.acmicpc.net/problem/17142) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
 | |     | [버블 소트](https://www.acmicpc.net/problem/1377) | <img src="https://static.solved.ac/tier_small/14.svg" height="25" align="center"/> |
 | |     | [낚시왕](https://www.acmicpc.net/problem/17143) | <img src="https://static.solved.ac/tier_small/15.svg" height="25" align="center"/> |
+| **week04** <br> (23.12.18 ~ 23.12.24) | 프로그래머스 | [스티커 모으기(2)](https://school.programmers.co.kr/learn/courses/30/lessons/12971) | Lv.3 |
+| |     | [당구 연습](https://school.programmers.co.kr/learn/courses/30/lessons/169198) | Lv.2 |
+| | 백준 | [트리의 높이와 너비](https://www.acmicpc.net/problem/2250) | <img src="https://static.solved.ac/tier_small/14.svg" height="25" align="center"/> |
+| |     | [벽 부수고 이동하기 2](https://www.acmicpc.net/problem/14442) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
+| |     | [로봇 청소기](https://www.acmicpc.net/problem/4991) | <img src="https://static.solved.ac/tier_small/15.svg" height="25" align="center"/> |
 
 <!-- problem table template
 
