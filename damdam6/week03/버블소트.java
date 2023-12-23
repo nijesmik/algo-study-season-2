@@ -1,35 +1,51 @@
-package y23Dec11Dec17;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Map;
 
-public class Baek1377 {
+public class Main {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception{
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(bf.readLine());
 
-        int[] arr = new int[N+1];
-        for(int i=1;i<=N;i++){
-            arr[i] = Integer.parseInt(bf.readLine());
+        ArrayList<num> arr = new ArrayList<>();
+        for(int i=0;i<N;i++){
+            arr.add(new num(i,Integer.parseInt(bf.readLine())));
+        }
+        Collections.sort(arr);
+        int max = 0;
+        for (int i = 0; i < N; i++) {
+            max = Math.max(max, arr.get(i).startIdx - i);
+        }
+        System.out.println(max+1);
+
+        //System.out.println(arr.toString());
+    }
+
+    static class num implements Comparable<num>{
+        int startIdx;
+        int n;
+
+        public num(int startIdx, int n) {
+            this.startIdx = startIdx;
+            this.n = n;
         }
 
-        boolean ch = false;
-        for (int i = 1; i <=N+1; i++) {
-            ch = false;
-            for (int j = 1; j <N-i; j++) {
-                if(arr[j] > arr[j+1]){
-                    ch = true;
-                    int tmp = arr[j+1];
-                    arr[j+1] = arr[j];
-                    arr[j] = tmp;
-                }
+        @Override
+        public int compareTo(num o) {
+            if(this.n > o.n)return 1;
+            if(this.n < o.n)return -1;
+            return 0;
+        }
 
-            }
-            if(!ch){
-                System.out.println(i);
-                break;
-            }
+        @Override
+        public String toString() {
+            return "num{" +
+                    "startIdx=" + startIdx +
+                    ", n=" + n +
+                    '}';
         }
     }
 }
