@@ -91,6 +91,11 @@
 | | 백준 | [트리의 높이와 너비](https://www.acmicpc.net/problem/2250) | <img src="https://static.solved.ac/tier_small/14.svg" height="25" align="center"/> |
 | |     | [벽 부수고 이동하기 2](https://www.acmicpc.net/problem/14442) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
 | |     | [로봇 청소기](https://www.acmicpc.net/problem/4991) | <img src="https://static.solved.ac/tier_small/15.svg" height="25" align="center"/> |
+| **week05** <br> (23.12.25 ~ 24.12.31) | 프로그래머스 | [보석 쇼핑](https://school.programmers.co.kr/learn/courses/30/lessons/67258) | Lv.3 |
+| |     | [합승 택시 요금](https://school.programmers.co.kr/learn/courses/30/lessons/72413) | Lv.3 |
+| | 백준 | [경사로](https://www.acmicpc.net/problem/14890) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
+| |     | [놀이 공원](https://www.acmicpc.net/problem/1561) | <img src="https://static.solved.ac/tier_small/14.svg" height="25" align="center"/> |
+| |     | [열쇠](https://www.acmicpc.net/problem/9328) | <img src="https://static.solved.ac/tier_small/15.svg" height="25" align="center"/> |
 
 <!-- problem table template
 
