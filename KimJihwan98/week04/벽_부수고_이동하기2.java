@@ -3,7 +3,6 @@ package 백준;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
@@ -43,42 +42,32 @@ public class 벽_부수고_이동하기2 {
 	static int[] dr = {0, 1, 0, -1};
 	static int[] dc = {1, 0, -1, 0};
 	static int bfs() {
-		boolean[][][] break_map = new boolean[N][M][K+1];
-		for(int i = 0; i < N; i++) {
-			Arrays.fill(break_map[i], Integer.MAX_VALUE);
-		}
-		break_map[0][0] = 0;
+		boolean[][][] visited = new boolean[N][M][K+1];
 		Queue<Loc> q = new LinkedList<>();
-		q.add(new Loc(0, 0, 1, 0));
-		while(!q.isEmpty()) {
+		q.add(new Loc(0,0,1,0));
+		visited[0][0][0] = true;
+		while(!q.isEmpty()){
 			Loc now = q.poll();
 			int r = now.r;
 			int c = now.c;
-			int n_walls = now.n_walls;
-			int n_break = now.n_break;
 			
-			if(r == N-1 && c == M-1) {
-				return n_walls;
-			}
+			if(r == N-1 && c == M-1) return now.n_walls;
 			
-			for(int i = 0; i< 4; i++) {
+			for(int i = 0; i < 4; i++) {
 				int nr = r + dr[i];
 				int nc = c + dc[i];
+				if(!(nr>=0 && nr<N && nc>=0 && nc<M)) continue;
 				
-				if(!(nr>=0&&nr<N&&nc>=0&&nc<M)) continue;
-				
-				if(map[nr][nc] == 0 && !break_map[nr][nc][now.n_break]) {
-					if(map[nr][nc] == 1 && n_break == 1) continue;
-					if(map[nr][nc] == 1) {
-						q.offer(new Loc(nr, nc, n_walls+1, n_break+1));
-						break_map[nr][nc] = n_break+1;
-					}
-					else {
-						q.offer(new Loc(nr, nc, n_walls+1, n_break));
-						break_map[nr][nc] = n_break;
-					}
+				if(map[nr][nc] == 0 && !visited[nr][nc][now.n_break]) {
+					q.add(new Loc(nr, nc, now.n_walls+1, now.n_break));
+					visited[nr][nc][now.n_break] = true;
+				}
+				else if(map[nr][nc] == 1 && now.n_break<K && !visited[nr][nc][now.n_break+1]){
+					q.add(new Loc(nr, nc, now.n_walls+1, now.n_break+1));
+					visited[nr][nc][now.n_break+1] = true;
 				}
 			}
+			
 		}
 		return -1;
 	}
