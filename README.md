@@ -96,7 +96,11 @@
 | | 백준 | [경사로](https://www.acmicpc.net/problem/14890) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
 | |     | [놀이 공원](https://www.acmicpc.net/problem/1561) | <img src="https://static.solved.ac/tier_small/14.svg" height="25" align="center"/> |
 | |     | [열쇠](https://www.acmicpc.net/problem/9328) | <img src="https://static.solved.ac/tier_small/15.svg" height="25" align="center"/> |
-
+| **week06** <br> (24.01.01 ~ 24.01.07) | 프로그래머스 | [도둑질](https://school.programmers.co.kr/learn/courses/30/lessons/42897) | Lv.3 |
+| |     | [징검다리 건너기](https://school.programmers.co.kr/learn/courses/30/lessons/64062) | Lv.3 |
+| | 백준 | [가장 긴 바이토닉 부분 수열](https://www.acmicpc.net/problem/11054) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
+| |     | [벽 부수고 이동하기 4](https://www.acmicpc.net/problem/16946) | <img src="https://static.solved.ac/tier_small/14.svg" height="25" align="center"/> |
+| |     | [원판 돌리기](https://www.acmicpc.net/problem/17822) | <img src="https://static.solved.ac/tier_small/14.svg" height="25" align="center"/> |
 <!-- problem table template
 
 | **week❓** <br> (24.❓.❓ ~ 24.❓.❓) | 프로그래머스 | [❓제목](❓링크) | Lv.❓ |
