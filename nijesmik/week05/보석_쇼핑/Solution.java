@@ -3,50 +3,40 @@ package nijesmik.week05.보석_쇼핑;
 import java.util.*;
 
 class Solution {
-    String[] types, gems;
-    Map<String, List<Integer>> map;
-    int combination[], start, length, typeSize;
+    int N, answerLength, answerStart;
 
     public int[] solution(String[] gems) {
-        this.gems = gems;
-        types = new String[100_000];
-        typeSize = 0;
-        map = new HashMap<>();
-        for (int i = 0; i < gems.length; i++) {
-            List<Integer> list = map.get(gems[i]);
-            if (list == null) {
-                list = new ArrayList<>();
-                types[typeSize++] = gems[i];
-            }
-            list.add(i+1);
-            map.put(gems[i], list);
+        answerLength = N = gems.length;
+        Set<String> set = new HashSet<>();
+        for (int i = 0; i < N; i++) {
+            set.add(gems[i]);
         }
-        combination = new int[typeSize];
-        length = gems.length;
-        dfs(0);
-        return new int[]{start, start + length};
+        int st = 0;
+        Map<String, Integer> map = new HashMap<>();
+        for (int en = 0; en < N; en++) {
+            int lastCount = map.getOrDefault(gems[en], 0);
+            map.put(gems[en], lastCount+1);
+            while (map.size() == set.size()) {
+                deriveAnswer(st, en);
+                int firstCount = map.get(gems[st]) - 1;
+                map.remove(gems[st]);
+                if (firstCount > 0) {
+                    map.put(gems[st], firstCount);
+                }
+                st++;
+            }
+        }
+        answerStart++;
+        return new int[]{answerStart, answerStart + answerLength};
     }
 
-    void dfs(int idx) {
-        if (idx == typeSize) {
-            int max = 0, min = gems.length;
-            for (int num : combination) {
-                max = Math.max(max, num);
-                min = Math.min(min, num);
-            }
-            int length = max - min;
-            if (this.length == length) {
-                start = Math.min(start, min);
-            } else if (this.length > length) {
-                this.length = length;
-                start = min;
-            }
-            return;
-        }
-        List<Integer> list = map.get(types[idx]);
-        for (int num : list) {
-            combination[idx] = num;
-            dfs(idx+1);
+    void deriveAnswer(int st, int en) {
+        int len = en - st;
+        if (answerLength == len) {
+            answerStart = Math.min(st, answerStart);
+        } else if (answerLength > len) {
+            answerLength = len;
+            answerStart = st;
         }
     }
 }
