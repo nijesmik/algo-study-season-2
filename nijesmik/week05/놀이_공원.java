@@ -1,67 +1,59 @@
 import java.util.*;
 
 public class 놀이_공원 {
+    static long N;
+    static int M, rideTimes[];
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int N = sc.nextInt();
-        int M = sc.nextInt();
+        N = sc.nextLong();
+        M = sc.nextInt();
 
-        Ride[] rides = new Ride[M];
-        for (int i = 0; i < M; i++) {
-            rides[i] = new Ride(sc.nextInt());
+        if (N <= M) {
+            System.out.println(N);
+            return;
         }
 
-        int lcm = getLCM(rides);
-        int denominator = 0;
+        rideTimes = new int[M];
         for (int i = 0; i < M; i++) {
-            denominator += lcm / rides[i].duration;
+            rideTimes[i] = sc.nextInt();
         }
-        N %= denominator;
 
-        int child = 0;
-        while (child < N) {
-            for (int i = 0; i < M; i++) {
-                int time = rides[i].time;
-                if (time == 0)
-                    child++;
-                if (child == N) {
-                    System.out.println(i + 1);
-                    break;
-                }
-                rides[i].time = ++time % rides[i].duration;
+        long total = totalRideTime() - 1;
+        long cnt = M;
+        for (int i = 0; i < M; i++) {
+            cnt += total / rideTimes[i];
+        }
+        total++;
+        for (int i = 0; i < M; i++) {
+            if (total % rideTimes[i] == 0) {
+                cnt++;
+            }
+            if (cnt == N) {
+                System.out.println(i+1);
+                return;
             }
         }
-
     }
 
-    static int getLCM(Ride[] rides) {
-        if (rides.length == 1) {
-            return rides[0].duration;
+    static long totalRideTime() {
+        long time = 0;
+        long st = 0;
+        long ed = N / M * 30;
+        while (st <= ed) {
+            long mid = (st + ed) / 2;
+            long cnt = M;
+            for (int i = 0; i < M; i++) {
+                cnt += mid / rideTimes[i];
+            }
+            if (cnt < N) {
+                st = mid + 1;
+            } else {
+                ed = mid - 1;
+                time = mid;
+            }
         }
-
-        int gcd = getGCD(rides[0].duration, rides[1].duration);
-        int lcm = rides[0].duration * rides[1].duration / gcd;
-
-        for (int i = 2; i < rides.length; i++) {
-            gcd = getGCD(lcm, rides[i].duration);
-            lcm = lcm * rides[i].duration / gcd;
-        }
-        return lcm;
-    }
-
-    static int getGCD(int n, int m) {
-        if (n % m == 0) {
-            return m;
-        }
-        return getGCD(m, n % m);
-    }
-
-    static class Ride {
-        int duration, time;
-
-        Ride(int duration) {
-            this.duration = duration;
-        }
+        return time;
     }
 }
