@@ -1,7 +1,6 @@
 package test;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+
+import java.util.*;
 
 public class 벽_부수고_이동하기_4 {
     static Count[][] counts;
@@ -30,12 +29,16 @@ public class 벽_부수고_이동하기_4 {
             for (int c = 0; c < columnSize; c++) {
                 int sum = 0;
                 if (map[r][c] == '1') {
-                    sum++;
+                    Set<Count> set = new HashSet<>();
                     for (int i = 0; i < 4; i++) {
                         int nr = r + dr[i], nc = c + dc[i];
                         if (nr >= 0 && nr < rowSize && nc >= 0 && nc < columnSize && counts[nr][nc] != null && map[nr][nc] == '0') {
-                            sum += counts[nr][nc].cnt;
+                            set.add(counts[nr][nc]);
                         }
+                    }
+                    sum++;
+                    for (Count count : set) {
+                        sum += count.cnt;
                     }
                 }
                 System.out.print(sum);
