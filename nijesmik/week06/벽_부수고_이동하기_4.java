@@ -1,23 +1,25 @@
 import java.util.*;
 
 public class 벽_부수고_이동하기_4 {
-    static Count[][] counts;
-    static char[][] map;
-    static int rowSize, columnSize;
+    static boolean[][] visited;
+    static int rowSize, columnSize, map[][];
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         rowSize = sc.nextInt();
         columnSize = sc.nextInt();
-        map = new char[rowSize][];
+        map = new int[rowSize][columnSize];
         for (int i = 0; i < rowSize; i++) {
-            map[i] = sc.next().toCharArray();
+            String row = sc.next();
+            for (int j = 0; j < columnSize; j++) {
+                map[i][j] = row.charAt(j) - '0';
+            }
         }
 
-        counts = new Count[rowSize][columnSize];
+        visited = new boolean[rowSize][columnSize];
         for (int i = 0; i < rowSize; i++) {
             for (int j = 0; j < columnSize; j++) {
-                if (counts[i][j] == null && map[i][j] == '0') {
+                if (!visited[i][j] && map[i][j] == 0) {
                     bfs(i, j);
                 }
             }
@@ -26,23 +28,7 @@ public class 벽_부수고_이동하기_4 {
         StringBuilder sb = new StringBuilder();
         for (int r = 0; r < rowSize; r++) {
             for (int c = 0; c < columnSize; c++) {
-                int sum = 0;
-                if (map[r][c] == '1') {
-                    Set<Count> set = new HashSet<>();
-                    for (int i = 0; i < 4; i++) {
-                        int nr = r + dr[i], nc = c + dc[i];
-                        if (nr >= 0 && nr < rowSize && nc >= 0 && nc < columnSize && counts[nr][nc] != null
-                                && map[nr][nc] == '0') {
-                            set.add(counts[nr][nc]);
-                        }
-                    }
-                    sum++;
-                    for (Count count : set) {
-                        sum += count.cnt;
-                    }
-                    sum %= 10;
-                }
-                sb.append(sum);
+                sb.append(map[r][c] % 10);
             }
             sb.append("\n");
         }
@@ -52,21 +38,28 @@ public class 벽_부수고_이동하기_4 {
     static int[] dr = { 1, -1, 0, 0 }, dc = { 0, 0, 1, -1 };
 
     static void bfs(int r, int c) {
-        Count count = new Count();
-        counts[r][c] = count;
+        Set<Integer> set = new HashSet<>();
+        int count = 1;
+        visited[r][c] = true;
         Queue<Point> q = new LinkedList<>();
         q.add(new Point(r, c));
         while (!q.isEmpty()) {
             Point cur = q.poll();
             for (int i = 0; i < 4; i++) {
                 int nr = cur.r + dr[i], nc = cur.c + dc[i];
-                if (nr >= 0 && nr < rowSize && nc >= 0 && nc < columnSize && counts[nr][nc] == null
-                        && map[nr][nc] == '0') {
-                    counts[nr][nc] = count;
-                    count.cnt++;
+                if (nr < 0 || nr >= rowSize || nc < 0 || nc >= columnSize || visited[nr][nc])
+                    continue;
+                if (map[nr][nc] == 0) {
+                    visited[nr][nc] = true;
+                    count++;
                     q.add(new Point(nr, nc));
+                } else {
+                    set.add(nr * 10000 + nc);
                 }
             }
+        }
+        for (int pos : set) {
+            map[pos / 10000][pos % 10000] += count;
         }
     }
 
@@ -77,9 +70,5 @@ public class 벽_부수고_이동하기_4 {
             this.r = r;
             this.c = c;
         }
-    }
-
-    static class Count {
-        int cnt = 1;
     }
 }
