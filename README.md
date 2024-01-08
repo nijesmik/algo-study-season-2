@@ -101,6 +101,12 @@
 | | 백준 | [가장 긴 바이토닉 부분 수열](https://www.acmicpc.net/problem/11054) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
 | |     | [벽 부수고 이동하기 4](https://www.acmicpc.net/problem/16946) | <img src="https://static.solved.ac/tier_small/14.svg" height="25" align="center"/> |
 | |     | [원판 돌리기](https://www.acmicpc.net/problem/17822) | <img src="https://static.solved.ac/tier_small/14.svg" height="25" align="center"/> |
+| **week07** <br> (24.01.08 ~ 24.01.14) | 프로그래머스 | [광고 삽입](https://school.programmers.co.kr/learn/courses/30/lessons/72414) | Lv.3 |
+| |     | [입국심사](https://school.programmers.co.kr/learn/courses/30/lessons/43238) | Lv.3 |
+| | 백준 | [어항 정리](https://www.acmicpc.net/problem/23291) | <img src="https://static.solved.ac/tier_small/16.svg" height="25" align="center"/> |
+| |     | [상범 빌딩](https://www.acmicpc.net/problem/6593) | <img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/> |
+| |     | [최소비용 구하기](https://www.acmicpc.net/problem/1916) | <img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/> |
+
 <!-- problem table template
 
 | **week❓** <br> (24.❓.❓ ~ 24.❓.❓) | 프로그래머스 | [❓제목](❓링크) | Lv.❓ |
