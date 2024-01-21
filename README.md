@@ -106,6 +106,11 @@
 | | 백준 | [어항 정리](https://www.acmicpc.net/problem/23291) | <img src="https://static.solved.ac/tier_small/16.svg" height="25" align="center"/> |
 | |     | [상범 빌딩](https://www.acmicpc.net/problem/6593) | <img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/> |
 | |     | [최소비용 구하기](https://www.acmicpc.net/problem/1916) | <img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/> |
+| **week08** <br> (24.01.22 ~ 24.01.28) | 백준 | [강의실 배정](https://www.acmicpc.net/problem/11000) | <img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/> |
+| |     | [레벨 햄버거](https://www.acmicpc.net/problem/16974) | <img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/> |
+| |     | [용액 합성하기](https://www.acmicpc.net/problem/14921) | <img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/> |
+| |     | [톱니바퀴 (2)](https://www.acmicpc.net/problem/15662) | <img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/> |
+
 
 <!-- problem table template
 
