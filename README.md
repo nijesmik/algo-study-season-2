@@ -110,14 +110,16 @@
 | |     | [레벨 햄버거](https://www.acmicpc.net/problem/16974) | <img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/> |
 | |     | [용액 합성하기](https://www.acmicpc.net/problem/14921) | <img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/> |
 | |     | [톱니바퀴 (2)](https://www.acmicpc.net/problem/15662) | <img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/> |
+| **week09** <br> (24.01.29 ~ 24.02.01) | 백준 | [미세먼지 안녕!](https://www.acmicpc.net/problem/17144) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
+| | 프로그래머스 | [표 편집](https://school.programmers.co.kr/learn/courses/30/lessons/81303) | Lv.3 |
+| (24.02.02 ~ 24.02.04) | 백준 | [수 이어 쓰기 2](https://www.acmicpc.net/problem/1790) | <img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/> |
 
 
 <!-- problem table template
 
-| **week❓** <br> (24.❓.❓ ~ 24.❓.❓) | 프로그래머스 | [❓제목](❓링크) | Lv.❓ |
-| |     | [❓제목](❓링크) | Lv.❓ |
-| | 백준 | [❓제목](https://www.acmicpc.net/problem/❓) | <img src="https://static.solved.ac/tier_small/❓.svg" height="25" align="center"/> |
-| |     | [❓제목](https://www.acmicpc.net/problem/❓) | <img src="https://static.solved.ac/tier_small/❓.svg" height="25" align="center"/> |
-| |     | [❓제목](https://www.acmicpc.net/problem/❓) | <img src="https://static.solved.ac/tier_small/❓.svg" height="25" align="center"/> |
+| **week❓** <br> (24.❓.❓ ~ 24.❓.❓) | 백준 | [❓제목](https://www.acmicpc.net/problem/❓) | <img src="https://static.solved.ac/tier_small/❓.svg" height="25" align="center"/> |
+| | 프로그래머스 | [❓제목](❓링크) | Lv.❓ |
+| (24.❓.❓ ~ 24.❓.❓) | 백준 | [❓제목](https://www.acmicpc.net/problem/❓) | <img src="https://static.solved.ac/tier_small/❓.svg" height="25" align="center"/> |
+| | 프로그래머스 | [❓제목](❓링크) | Lv.❓ |
 
 -->
