@@ -50,6 +50,7 @@
 | **week09** <br> (24.01.29 ~ 24.02.01) | 백준 | [미세먼지 안녕!](https://www.acmicpc.net/problem/17144) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
 | | 프로그래머스 | [표 편집](https://school.programmers.co.kr/learn/courses/30/lessons/81303) | Lv.3 |
 | (24.02.02 ~ 24.02.04) | 백준 | [수 이어 쓰기 2](https://www.acmicpc.net/problem/1790) | <img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/> |
+| | 프로그래머스 | [도넛과 막대 그래프](https://school.programmers.co.kr/learn/courses/30/lessons/258711) | Lv.2 |
 
 
 <!-- problem table template
