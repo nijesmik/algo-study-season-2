@@ -4,44 +4,50 @@ import java.util.*;
 
 class Solution {
     public String solution(int n, int k, String[] cmds) {
-        boolean[] deleted = new boolean[n];
         Stack<Integer> stack = new Stack();
+        PriorityQueue<Integer> less = new PriorityQueue<>((a, b) -> b - a);
+        PriorityQueue<Integer> greater = new PriorityQueue<>((a, b) -> a - b);
+        for (int i = 0; i < k; i++) {
+            less.add(i);
+        }
+        for (int i = k + 1; i < n; i++) {
+            greater.add(i);
+        }
+
         for (String cmd : cmds) {
             char c = cmd.charAt(0);
             if (c == 'U') {
                 int u = Integer.parseInt(cmd.split(" ")[1]);
-                int cnt = 0;
-                while (cnt < u) {
-                    if (!deleted[--k]) {
-                        cnt++;
-                    }
+                while (u-- > 0) {
+                    greater.add(k);
+                    k = less.poll();
                 }
             } else if (c == 'D') {
                 int d = Integer.parseInt(cmd.split(" ")[1]);
-                int cnt = 0;
-                while (cnt < d) {
-                    if (!deleted[++k]) {
-                        cnt++;
-                    }
+                while (d-- > 0) {
+                    less.add(k);
+                    k = greater.poll();
                 }
             } else if (c == 'Z') {
-                int idx = stack.pop();
-                deleted[idx] = false;
+                int restore = stack.pop();
+                if (k < restore) {
+                    greater.add(restore);
+                } else {
+                    less.add(restore);
+                }
             } else if (c == 'C') {
-                deleted[k] = true;
                 stack.push(k);
-                int idx = k;
-                while (idx < n && deleted[idx]) {
-                    idx++;
+                if (greater.isEmpty()) {
+                    k = less.poll();
+                } else {
+                    k = greater.poll();
                 }
-                if (idx == n) {
-                    idx = k;
-                    while (deleted[idx]) {
-                        idx--;
-                    }
-                }
-                k = idx;
             }
+        }
+
+        boolean[] deleted = new boolean[n];
+        for (int idx : stack) {
+            deleted[idx] = true;
         }
         StringBuilder sb = new StringBuilder();
         for (boolean del : deleted) {
