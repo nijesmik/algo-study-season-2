@@ -75,7 +75,7 @@ public class 미세먼지_안녕 {
 				int nr = r + dr[i];
 				int nc = c + dc[i];
 				if(!(nr>=0&&nr<R&&nc>=0&&nc<C)) continue;
-				if(tmp[nr][nc] == -1) continue;
+				if(map[nr][nc] == -1) continue;
 				tmp[nr][nc] += ww;
 				tmp[r][c] -= ww;
 			}
