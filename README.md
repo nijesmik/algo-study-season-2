@@ -51,7 +51,10 @@
 | | 프로그래머스 | [표 편집](https://school.programmers.co.kr/learn/courses/30/lessons/81303) | Lv.3 |
 | (24.02.02 ~ 24.02.04) | 백준 | [수 이어 쓰기 2](https://www.acmicpc.net/problem/1790) | <img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/> |
 | | 프로그래머스 | [도넛과 막대 그래프](https://school.programmers.co.kr/learn/courses/30/lessons/258711) | Lv.2 |
-
+| **week10** <br> (24.02.05 ~ 24.02.08) | 백준 | [수 묶기](https://www.acmicpc.net/problem/1744) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
+| | 프로그래머스 | [산 모양 타일링](https://school.programmers.co.kr/learn/courses/30/lessons/258705) | Lv.3 |
+| (24.02.09 ~ 24.02.11) | 백준 | [주사위 굴리기](https://www.acmicpc.net/problem/14499) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
+| | 프로그래머스 | [베스트앨범](https://school.programmers.co.kr/learn/courses/30/lessons/42579) | Lv.3 |
 
 <!-- problem table template
 
