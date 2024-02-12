@@ -55,6 +55,10 @@
 | | 프로그래머스 | [산 모양 타일링](https://school.programmers.co.kr/learn/courses/30/lessons/258705) | Lv.3 |
 | (24.02.09 ~ 24.02.11) | 백준 | [주사위 굴리기](https://www.acmicpc.net/problem/14499) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
 | | 프로그래머스 | [베스트앨범](https://school.programmers.co.kr/learn/courses/30/lessons/42579) | Lv.3 |
+| **week11** <br> (24.02.12 ~ 24.02.15) | 백준 | [⚾](https://www.acmicpc.net/problem/17281) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
+| | 프로그래머스 | [양과 늑대](https://school.programmers.co.kr/learn/courses/30/lessons/92343) | Lv.3 |
+| (24.02.16 ~ 24.02.18) | 백준 | [리모컨](https://www.acmicpc.net/problem/1107) | <img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/> |
+| | 프로그래머스 | [[1차] 셔틀버스](https://school.programmers.co.kr/learn/courses/30/lessons/17678) | Lv.3 |
 
 <!-- problem table template
 
