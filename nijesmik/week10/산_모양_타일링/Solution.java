@@ -1,4 +1,4 @@
-package week10.산_모양_타일링;
+package nijesmik.week10.산_모양_타일링;
 
 class Solution {
     public int solution(int n, int[] tops) {

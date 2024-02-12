@@ -1,4 +1,4 @@
-package week10;
+package nijesmik.week10;
 
 import java.util.*;
 

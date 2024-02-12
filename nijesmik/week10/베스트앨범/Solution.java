@@ -1,4 +1,4 @@
-package week10.베스트앨범;
+package nijesmik.week10.베스트앨범;
 
 import java.util.*;
 
