@@ -21,28 +21,35 @@ public class 야구 {
     }
 
     static void deriveScore() {
-        int inning = 0, idx = 0, out = 0, score = 0;
-        Queue<Integer> field = new LinkedList<>(List.of(0, 0, 0));
-        while (inning < N) {
-            int res = result[inning][players[idx]];
-            if (res == 0) {
-                if (++out == 3) {
-                    out = 0;
-                    inning++;
-                    field = new LinkedList<>(List.of(0, 0, 0));
+        int idx = 0; score = 0;
+        for (int inning = 0; inning < N; inning++) {
+            int out = 0;
+            int[] base = new int[4];
+            while (out < 3) {
+                int res = result[inning][players[idx]];
+                if (res == 0) {
+                    out++;
+                } else {
+                    base[0] = 1;
+                    base = moveBase(base, res);
                 }
-            } else {
-                field.add(1);
-                while (res-- > 0) {
-                    score += field.poll();
-                    if (res > 0) {
-                        field.add(0);
-                    }
-                }
+                idx = (idx + 1) % 9;
             }
-            idx = (idx + 1) % 9;
         }
         ans = Math.max(ans, score);
+    }
+
+    static int score;
+
+    static int[] moveBase(int[] oldBase, int res) {
+        for (int i = 0; i < res; i++) {
+            score += oldBase[3 - i];
+        }
+        int[] newBase = new int[4];
+        for (int i = res; i < 4; i++) {
+            newBase[i] = oldBase[i - res];
+        }
+        return newBase;
     }
 
     static void dfs(int depth) {
