@@ -1,10 +1,10 @@
 # SSAFY 서울8반 Algorithm Study
 
-## 📌 Documentation
+## 📋 Documents
 
-📋 [**Convention**](https://github.com/nijesmik/algo-study-season-2/wiki/Convention)
+📏 [**Ground Rule**](https://github.com/nijesmik/algo-study-season-2/wiki#-ground-rule) | 🤝 [**Convention**](https://github.com/nijesmik/algo-study-season-2/wiki/%F0%9F%A4%9D-Convention)
 
-## 📌 Problems
+## ✍️ Problems
 
 |     | 분류 | 문제 | 난이도 |
 | :-: | :-: | :-: | :--: |
@@ -59,6 +59,10 @@
 | | 프로그래머스 | [양과 늑대](https://school.programmers.co.kr/learn/courses/30/lessons/92343) | Lv.3 |
 | (24.02.16 ~ 24.02.18) | 백준 | [리모컨](https://www.acmicpc.net/problem/1107) | <img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/> |
 | | 프로그래머스 | [[1차] 셔틀버스](https://school.programmers.co.kr/learn/courses/30/lessons/17678) | Lv.3 |
+| **week12** <br> (24.02.19 ~ 24.02.22) | 백준 | [불!](https://www.acmicpc.net/problem/4179) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
+| | 프로그래머스 | [표현 가능한 이진트리](https://school.programmers.co.kr/learn/courses/30/lessons/150367) | Lv.3 |
+| (24.02.23 ~ 24.02.25) | 백준 | [캐슬 디펜스](https://www.acmicpc.net/problem/17135) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
+| | 프로그래머스 | [아이템 줍기](https://school.programmers.co.kr/learn/courses/30/lessons/87694) | Lv.3 |
 
 <!-- problem table template
 
