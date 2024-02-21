@@ -5,6 +5,7 @@ public class Main {
     static int sizeR, sizeC;
     static int[] dr = { 1, -1, 0, 0 }, dc = { 0, 0, 1, -1 };
     static char[][] map;
+    static boolean[][] visited;
     static Queue<Node> fire, human;
 
     public static void main(String[] args) {
@@ -12,6 +13,7 @@ public class Main {
         sizeR = sc.nextInt();
         sizeC = sc.nextInt();
         map = new char[sizeR][sizeC];
+        visited = new boolean[sizeR][sizeC];
         fire = new LinkedList<>();
         human = new LinkedList<>();
         for (int i = 0; i < sizeR; i++) {
@@ -22,6 +24,7 @@ public class Main {
                     fire.add(new Node(i, j));
                 } else if (map[i][j] == 'J') {
                     map[i][j] = '.';
+                    visited[i][j] = true;
                     human.add(new Node(i, j));
                 }
             }
@@ -50,7 +53,8 @@ public class Main {
                     int nr = cur.r + dr[i], nc = cur.c + dc[i];
                     if (nr < 0 || nr >= sizeR || nc < 0 || nc >= sizeC) {
                         return "" + time;
-                    } else if (map[nr][nc] == '.') {
+                    } else if (map[nr][nc] == '.' && !visited[nr][nc]) {
+                        visited[nr][nc] = true;
                         human.add(new Node(nr, nc));
                     }
                 }
