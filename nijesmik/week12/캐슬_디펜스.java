@@ -38,11 +38,9 @@ public class 캐슬_디펜스 {
         int score = 0;
         for (int i = sizeR; i > 0; i--) {
             int[][] enemies = new int[sizeC][];
-            for (int d = 1; d <= sizeD; d++) {
-                for (int j : permutation) {
-                    if (enemies[j] == null) {
-                        enemies[j] = kill(i, j, d);
-                    }
+            for (int j : permutation) {
+                for (int d = 1; d <= sizeD && enemies[j] == null; d++) {
+                    enemies[j] = kill(i, j, d);
                 }
             }
             for (int[] e : enemies) {
