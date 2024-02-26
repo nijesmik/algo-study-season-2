@@ -63,6 +63,10 @@
 | | 프로그래머스 | [표현 가능한 이진트리](https://school.programmers.co.kr/learn/courses/30/lessons/150367) | Lv.3 |
 | (24.02.23 ~ 24.02.25) | 백준 | [캐슬 디펜스](https://www.acmicpc.net/problem/17135) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
 | | 프로그래머스 | [아이템 줍기](https://school.programmers.co.kr/learn/courses/30/lessons/87694) | Lv.3 |
+| **week13** <br> (24.02.26 ~ 24.02.29) | 백준 | [테트로미노](https://www.acmicpc.net/problem/14500) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
+| | 프로그래머스 | [자물쇠와 열쇠](https://school.programmers.co.kr/learn/courses/30/lessons/60059) | Lv.3 |
+| (24.03.01 ~ 24.03.03) | 백준 | [세 수의 합](https://www.acmicpc.net/problem/2295) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
+| | 프로그래머스 | [파괴되지 않은 건물](https://school.programmers.co.kr/learn/courses/30/lessons/92344) | Lv.3 |
 
 <!-- problem table template
 
