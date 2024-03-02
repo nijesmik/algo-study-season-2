@@ -1,0 +1,50 @@
+import java.util.*;
+
+class Solution {
+    static ArrayList<Integer> timeInt; 
+
+    public String solution(int n, int t, int m, String[] timetable) {
+        timeInt = new ArrayList<>();
+
+        for(String time : timetable) {
+            int hour = Integer.parseInt(time.substring(0, 2));
+            int minute = Integer.parseInt(time.substring(3));
+            timeInt.add(hour * 60 + minute);
+        }
+        Collections.sort(timeInt);
+
+        int busTime = 9 * 60; 
+        int lastTime = 0; 
+
+        for(int i = 0; i < n; i++) { 
+            int count = 0; 
+            while(count < m && !timeInt.isEmpty() && timeInt.get(0) <= busTime) {
+                lastTime = timeInt.remove(0) - 1;
+                count++;
+            }
+            if(i < n-1 || count < m) { 
+                lastTime = busTime;
+            }
+            busTime += t;
+        }
+        
+        int hour = lastTime/60;
+        int minute = lastTime%60;
+        
+        String hourString;
+        if(hour<10){
+            hourString = "0"+hour+":";
+        }else {
+            hourString = ""+hour;
+        }
+        
+        String minuteString;
+                if(minute<10){
+            minuteString = "0"+minute+":";
+        }else {
+            minuteString = ""+minute;
+        }
+
+        return String.format("%02d:%02d", lastTime / 60, lastTime % 60);
+    }
+}
