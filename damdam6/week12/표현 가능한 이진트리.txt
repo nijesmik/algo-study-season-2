@@ -1,50 +1,72 @@
+import java.util.*;
+
 class Solution {
     public int[] solution(long[] numbers) {
-        
-        
-        
         int[] answer = new int[numbers.length];
-        
-        
-        for(int i=0; i<numbers.length;i++){
-            String biStr = Long.toBinaryString(numbers[i]);
-            int idx = 1;
+        int idx = 0;
+        for(long num: numbers){
+          //  System.out.println(num);
+            String binaryString = Long.toBinaryString(num);
+            //0 추가해서 사용
+            binaryString = getFullBinary(binaryString);
+           // System.out.println(binaryString);
             
-            // 아니 제발ㅠ
-            // 포화이진트리
-            int h = 1;
-            int cnt = 1;
-            while( cnt < biStr.length()){
-                cnt = 1+ cnt*2;
-                h++;
+            // 0을 빼가면서 테스트하기
+            if(isBinaryTree(binaryString)){
+                answer[idx++] = 1;
+            }else{
+                answer[idx++] = 0;
             }
             
-            // 중간이 빌 수도 있지만, 그냥 좌측으로 밀어도 상관 없지 않나? 
-            // 아, 아닌가,,,,
-            // 가장 끝의 좌측부터 하나씩 채우고 중간까지 채워야 되는데
-            // 채우는 중간의 위치를 어떻게 계산하나?
-        
-            for(int i=0 ;i<h;i++){
-                biStr = "0"+biStr;
-            }
-            
-            int lengthStr = biStr.length();
-            
-            while(lengthStr > 0 ){
-                // 이렇게 하는 것보다 dfs로 양쪽 완탐 돌리는게 맞을 듯
-                
-                // 전체 길이에서 중간값 1 빼고 /2하기
-                // 중간 위치의 노드가 0이 아니라면 계속 
-                // 0 이라면 불가능이므로 바로 0 반환
-                
-            }
-            
-            
-            
-            
-            //answer[i] = ?
         }
         
         return answer;
+    }
+    
+    private String getFullBinary(String binary){
+        int length = binary.length();
+        int nodeCnt = 1;
+        int level = 1;
+        // 몇 층까지 있는지 확인
+        while(length > nodeCnt){
+            level *= 2;
+            nodeCnt += level;
+        }
+        int offset = nodeCnt - length;
+        return "0".repeat(offset) + binary;
+    }
+    
+    private boolean isBinaryTree(String binary){
+        int len = binary.length();
+        //  리프 노드일 경우
+        if(binary.length() == 0) return true;
+        
+        int root = len/2;
+        String leftSubTree = binary.substring(0,root);
+        String rightSubTree = binary.substring(root+1);
+        
+        // 루트 노드가 0이면 서브트리도 모두 0이어야 됨
+        if(binary.charAt(root) == '0'){
+            return isZeroTree(binary.substring(0,root))&& isZeroTree(binary.substring(root+1));
+        }
+        
+        return isBinaryTree(leftSubTree) && isBinaryTree(rightSubTree);
+        
+    }
+    
+    // 자식이 전부다 0인가 확인
+    private boolean isZeroTree(String binary){
+        int len = binary.length();
+        if(binary.length() == 0) return true;
+        
+        int root = len / 2;
+        String leftSubTree = binary.substring(0, root);
+        String rightSubTree = binary.substring(root + 1);
+
+        if (binary.charAt(root) == '1') {
+            return false;
+        }
+
+        return isZeroTree(leftSubTree) && isZeroTree(rightSubTree);
     }
 }
