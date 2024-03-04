@@ -67,6 +67,10 @@
 | | 프로그래머스 | [자물쇠와 열쇠](https://school.programmers.co.kr/learn/courses/30/lessons/60059) | Lv.3 |
 | (24.03.01 ~ 24.03.03) | 백준 | [세 수의 합](https://www.acmicpc.net/problem/2295) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
 | | 프로그래머스 | [파괴되지 않은 건물](https://school.programmers.co.kr/learn/courses/30/lessons/92344) | Lv.3 |
+| **week14** <br> (24.03.04 ~ 24.03.07) | 백준 | [드래곤 커브](https://www.acmicpc.net/problem/15685) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
+| | 프로그래머스 | [미로 탈출 명령어](https://school.programmers.co.kr/learn/courses/30/lessons/150365) | Lv.3 |
+| (24.03.08 ~ 24.03.10) | 백준 | [A와 B](https://www.acmicpc.net/problem/12904) | <img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/> |
+| | 프로그래머스 | [[1차] 추석 트래픽](https://school.programmers.co.kr/learn/courses/30/lessons/17676) | Lv.3 |
 
 <!-- problem table template
 
