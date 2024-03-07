@@ -1,0 +1,129 @@
+import java.util.*;
+
+class Solution {
+    public String solution(int n, int m, int x, int y, int r, int c, int k) {
+                String answer = "";
+        int[][] bd = new int[n][m];
+        pos startPos = new pos(x-1,y-1,-1,0);
+        
+        ArrayDeque<pos> pqu = new ArrayDeque<>();
+        pqu.add(startPos);
+        
+        while(!pqu.isEmpty()){
+            pos tmp = pqu.poll();
+            
+            if(tmp.cnt == k && tmp.x == r-1 && tmp.y == c-1){
+                answer = tmp.str;
+                break;
+            }
+            
+            if(tmp.cnt >= k){
+                continue;
+            }
+            
+            for(int i=0; i<4;i++){
+                int nx = tmp.x + dx[i];
+                int ny = tmp.y + dy[i];
+                
+                if(nx == r-1 && ny == c-1 && tmp.cnt+1 == k){
+                    answer = tmp.str;
+                }
+                
+                if(nx >= n || nx <0 || ny >= m || ny <0){
+                    continue;
+                }
+                
+                pos p = new pos(nx, ny, i, tmp.cnt +1);
+                p.setStr(tmp.str);
+                
+                pqu.add(p);
+                
+            }
+            
+        }
+        
+        if(answer == ""){
+            answer = "impossible";
+        }
+
+        return answer;
+    }
+    // d아래 l왼 r오 u위
+    
+    static int[] dx = new int[]{1,0,0,-1};
+    static int[] dy = new int[]{0,-1,1,0};
+    
+    //k 기준, 직전에 탄 문자열을 기준 priorityQue돌리기
+    static class pos implements Comparable<pos>{
+        int x;
+        int y;
+        int dir;
+        int cnt;
+        String str;
+        
+        pos(int x, int y, int dir, int cnt){
+            this.x = x;
+            this.y = y;
+            this.dir = dir;
+            this.cnt = cnt;
+            this.str = "";
+        }
+        
+        public void setStr(String str){
+            this.str = str;
+            
+            switch(this.dir){
+                case 0:
+                    this.str = this.str + "d";
+                    break;
+                case 1:
+                    this.str  = this.str + "l";
+                    break;
+                case 2:
+                    this.str  = this.str + "r";
+                    break;
+                case 3:
+                    this.str = this.str + "u";
+                    break;
+            }
+            
+            
+            return;
+        }
+        
+         public String getStr(int dir){
+            
+            switch(dir){
+                case 0:
+                    tempStr = this.str + "d";
+                    break;
+                case 1:
+                    tempStr  = this.str + "l";
+                    break;
+                case 2:
+                    tempStr  = this.str + "r";
+                    break;
+                case 3:
+                    tempStr = this.str + "u";
+                    break;
+            }
+            
+            
+            return tempStr;
+        }
+        
+        
+        public int compareTo(pos o){
+            if(this.cnt != o.cnt){
+            return Integer.compare(this.cnt, o.cnt);
+            }
+            return Integer.compare(this.dir, o.dir);
+        }
+        
+        public String toString(){
+            return this.str+" "+this.dir+" ";
+        }
+        
+    }
+    
+}
