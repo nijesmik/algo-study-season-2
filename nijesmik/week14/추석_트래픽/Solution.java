@@ -11,11 +11,9 @@ class Solution {
         }
         int ans = 0;
         for (int i = 0; i < N; i++) {
-            int start = logs[i].end;
-            int end = logs[i].end + 999;
-            int cnt = 0;
-            for (int j = 0; j < N; j++) {
-                if (logs[j].start <= end && logs[j].end >= start) {
+            int cnt = 1;
+            for (int j = i + 1; j < N; j++) {
+                if (logs[j].start < logs[i].end + 1000) {
                     cnt++;
                 }
             }
