@@ -71,6 +71,10 @@
 | | 프로그래머스 | [미로 탈출 명령어](https://school.programmers.co.kr/learn/courses/30/lessons/150365) | Lv.3 |
 | (24.03.08 ~ 24.03.10) | 백준 | [A와 B](https://www.acmicpc.net/problem/12904) | <img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/> |
 | | 프로그래머스 | [[1차] 추석 트래픽](https://school.programmers.co.kr/learn/courses/30/lessons/17676) | Lv.3 |
+| **week15** <br> (24.03.11 ~ 24.03.14) | 백준 | [이차원 배열과 연산](https://www.acmicpc.net/problem/17140) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
+| | 프로그래머스 | [보행자 천국](https://school.programmers.co.kr/learn/courses/30/lessons/1832) | Lv.3 |
+| (24.03.15 ~ 24.03.17) | 백준 | [다리 만들기](https://www.acmicpc.net/problem/2146) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
+| | 프로그래머스 | [2차원 동전 뒤집기](https://school.programmers.co.kr/learn/courses/30/lessons/131703) | Lv.3 |
 
 <!-- problem table template
 
