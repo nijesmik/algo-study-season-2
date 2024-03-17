@@ -63,6 +63,18 @@
 | | 프로그래머스 | [표현 가능한 이진트리](https://school.programmers.co.kr/learn/courses/30/lessons/150367) | Lv.3 |
 | (24.02.23 ~ 24.02.25) | 백준 | [캐슬 디펜스](https://www.acmicpc.net/problem/17135) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
 | | 프로그래머스 | [아이템 줍기](https://school.programmers.co.kr/learn/courses/30/lessons/87694) | Lv.3 |
+| **week13** <br> (24.02.26 ~ 24.02.29) | 백준 | [테트로미노](https://www.acmicpc.net/problem/14500) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
+| | 프로그래머스 | [자물쇠와 열쇠](https://school.programmers.co.kr/learn/courses/30/lessons/60059) | Lv.3 |
+| (24.03.01 ~ 24.03.03) | 백준 | [세 수의 합](https://www.acmicpc.net/problem/2295) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
+| | 프로그래머스 | [파괴되지 않은 건물](https://school.programmers.co.kr/learn/courses/30/lessons/92344) | Lv.3 |
+| **week14** <br> (24.03.04 ~ 24.03.07) | 백준 | [드래곤 커브](https://www.acmicpc.net/problem/15685) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
+| | 프로그래머스 | [미로 탈출 명령어](https://school.programmers.co.kr/learn/courses/30/lessons/150365) | Lv.3 |
+| (24.03.08 ~ 24.03.10) | 백준 | [A와 B](https://www.acmicpc.net/problem/12904) | <img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/> |
+| | 프로그래머스 | [[1차] 추석 트래픽](https://school.programmers.co.kr/learn/courses/30/lessons/17676) | Lv.3 |
+| **week15** <br> (24.03.11 ~ 24.03.14) | 백준 | [이차원 배열과 연산](https://www.acmicpc.net/problem/17140) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
+| | 프로그래머스 | [보행자 천국](https://school.programmers.co.kr/learn/courses/30/lessons/1832) | Lv.3 |
+| (24.03.15 ~ 24.03.17) | 백준 | [다리 만들기](https://www.acmicpc.net/problem/2146) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
+| | 프로그래머스 | [2차원 동전 뒤집기](https://school.programmers.co.kr/learn/courses/30/lessons/131703) | Lv.3 |
 
 <!-- problem table template
 
