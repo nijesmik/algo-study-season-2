@@ -4,49 +4,45 @@ import java.util.*;
 
 class Solution {
     int MOD = 20170805;
-    int[] dr = {1, 0}, dc = {0, 1};
-    int[][] map;
-    Queue<Record> q;
-    
     public int solution(int m, int n, int[][] cityMap) {
-        map = cityMap;
-        q = new LinkedList<>();
+        int[][][] dp = new int[2][m][n];
 
-        add(1, 0, 0);
-        add(0, 1, 1);
-        int ans = 0;
-        while (!q.isEmpty()) {
-            Record cur = q.poll();
-            if (cur.r == m - 1 && cur.c == n - 1) {
-                ans = (ans + 1) % MOD;
-                continue;
+        // 0 : right, 1 : down
+        for (int c = 0; c < n; c++) {
+            if (cityMap[0][c] == 1) {
+                break;
             }
-            for (int i = 0; i < 2; i++) {
-                int nr = cur.r + dr[i], nc = cur.c + dc[i];
-                if (nr >= 0 && nr < m && nc >= 0 && nc < n) {
-                    if (map[cur.r][cur.c] == 2 && cur.prevDir != i) {
-                        continue;
-                    }
-                    add(nr, nc, i);
+            dp[0][0][c] = 1;
+        }
+
+        for (int r = 0; r < m; r++) {
+            if (cityMap[r][0] == 1) {
+                break;
+            }
+            dp[1][r][0] = 1;
+        }
+
+        for (int r = 1; r < m; r++) {
+            for (int c = 1; c < n; c++) {
+                if (cityMap[r - 1][c] != 1) {
+                    dp[1][r][c] += dp[1][r - 1][c];
                 }
+                if (cityMap[r - 1][c] == 0) {
+                    dp[1][r][c] += dp[0][r - 1][c];
+                }
+
+                if (cityMap[r][c - 1] != 1) {
+                    dp[0][r][c] += dp[0][r][c - 1];
+                }
+                if (cityMap[r][c - 1] == 0) {
+                    dp[0][r][c] += dp[1][r][c - 1];
+                }
+
+                dp[0][r][c] %= MOD;
+                dp[1][r][c] %= MOD;
             }
         }
-        return ans;
-    }
-    
-    void add(int r, int c, int prevDir) {
-        if (map[r][c] == 1) {
-            return;
-        }
-        q.add(new Record(r, c, prevDir));
-    }
-    
-    class Record {
-        int r, c, prevDir;
-        Record(int r, int c, int prevDir) {
-            this.r = r;
-            this.c = c;
-            this.prevDir = prevDir;
-        }
+
+        return (dp[0][m - 1][n - 1] + dp[1][m - 1][n - 1]) % MOD;
     }
 }
