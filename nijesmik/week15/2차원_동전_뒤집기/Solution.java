@@ -1,51 +1,50 @@
 import java.util.*;
 
 class Solution {
-    int sizeR, sizeC, origin[][], target[][];
+    int sizeR, sizeC, origin[][], target[][], ans;
 
     public int solution(int[][] beginning, int[][] target) {
         sizeR = beginning.length;
         sizeC = beginning[0].length;
-        origin = copy(beginning);
-        this.target = target;
-
-        int result = flip(0);
         origin = beginning;
-        flipColumn(0);
-        return Math.max(result, flip(1));
+        this.target = target;
+        ans = -1;
+
+        dfs(0, 0);
+        return ans;
     }
 
-    private int[][] copy(int[][] arr) {
-        int[][] copy = new int[sizeR][sizeC];
-        for (int i = 0; i < sizeR; i++) {
-            for (int j = 1; j < sizeC; j++) {
-                copy[i][j] = arr[i][j];
-            }
+    private void dfs(int depth, int cnt) {
+        if (depth == sizeR + sizeC) {
+            test(cnt);
+            return;
         }
-        return copy;
+
+        if (depth < sizeR) {
+            dfs(depth + 1, cnt);
+            flipRow(depth);
+            dfs(depth + 1, cnt + 1);
+            flipRow(depth);
+        } else {
+            dfs(depth + 1, cnt);
+            flipColumn(depth - sizeR);
+            dfs(depth + 1, cnt + 1);
+            flipColumn(depth - sizeR);
+        }
     }
 
-    private int flip(int cnt) {
+    private void test(int cnt) {
         for (int i = 0; i < sizeR; i++) {
-            if (origin[i][0] != target[i][0]) {
-                cnt++;
-                flipRow(i);
-            }
-        }
-        for (int i = 0; i < sizeC; i++) {
-            if (origin[0][i] != target[0][i]) {
-                cnt++;
-                flipColumn(i);
-            }
-        }
-        for (int i = 1; i < sizeR; i++) {
-            for (int j = 1; j < sizeC; j++) {
+            for (int j = 0; j < sizeC; j++) {
                 if (origin[i][j] != target[i][j]) {
-                    return -1;
+                    return;
                 }
             }
         }
-        return cnt;
+        if (ans == -1) {
+            ans = cnt;
+        }
+        ans = Math.min(ans, cnt);
     }
 
     private void flipColumn(int colIdx) {
