@@ -1,10 +1,22 @@
-# SSAFY 서울8반 Algorithm Study
+# SSAFY 10기 서울8반 알고리즘 스터디
 
-## 📋 Documents
+## ☝️ SEASON 1 (23.08.31 ~ 23.11.05)
+
+▶️ [**바로가기**](https://github.com/nijesmik/algo-study-season-1)
+
+<br>
+
+## ✌️ SEASON 2 (23.11.27 ~ )
+
+<div align='center'>
+
+### 📋 Documents
 
 📏 [**Ground Rule**](https://github.com/nijesmik/algo-study-season-2/wiki#-ground-rule) | 🤝 [**Convention**](https://github.com/nijesmik/algo-study-season-2/wiki/%F0%9F%A4%9D-Convention)
 
-## ✍️ Problems
+</div>
+
+### ✍️ Problems
 
 |     | 분류 | 문제 | 난이도 |
 | :-: | :-: | :-: | :--: |
@@ -75,6 +87,10 @@
 | | 프로그래머스 | [보행자 천국](https://school.programmers.co.kr/learn/courses/30/lessons/1832) | Lv.3 |
 | (24.03.15 ~ 24.03.17) | 백준 | [다리 만들기](https://www.acmicpc.net/problem/2146) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
 | | 프로그래머스 | [2차원 동전 뒤집기](https://school.programmers.co.kr/learn/courses/30/lessons/131703) | Lv.3 |
+| **week16** <br> (24.03.18 ~ 24.03.21) | 백준 | [타일 채우기](https://www.acmicpc.net/problem/2133) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
+| | 소프티어 | [자동차 테스트](https://softeer.ai/practice/6247) | Lv.3 |
+| (24.03.22 ~ 24.03.24) | 백준 | [사다리 조작](https://www.acmicpc.net/problem/15684) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
+| | 소프티어 | [순서대로 방문하기](https://softeer.ai/practice/6246) | Lv.3 |
 
 <!-- problem table template
 
