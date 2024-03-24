@@ -7,8 +7,9 @@ import java.util.StringTokenizer;
 
 public class 백준_15684_사다리조작 {
     static int w, h, m;
-    static boolean[][] check;
+    static int[][] check;
     static List<int[]> list;
+    static int key = 2;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -16,18 +17,19 @@ public class 백준_15684_사다리조작 {
         w = Integer.parseInt(st.nextToken()); // 사다리
         m = Integer.parseInt(st.nextToken()); // 줄
         h = Integer.parseInt(st.nextToken());
-        check = new boolean[h + 2][w + 2];
+        check = new int[h + 2][w + 2];
         for (int i = 0; i < m; i++) {
             st = new StringTokenizer(br.readLine());
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
-            check[a][b] = check[a][b + 1] = true;
+            check[a][b] = key++;
+            check[a][b + 1] = key++;
         }
         list = new ArrayList<>();
         // 왼쪽에서 오른쪽으로 그을 수 있는 점 모음
         for (int i = 1; i <= h; i++) {
             for (int j = 1; j < w; j++) {
-                if (!check[i][j] && !check[i][j + 1]) {
+                if (check[i][j] == 0 && check[i][j + 1] == 0) {
                     list.add(new int[]{i, j});
                 }
             }
@@ -41,9 +43,12 @@ public class 백준_15684_사다리조작 {
             }
             return;
         }
-        int[] arr;
+
         for (int i = 0; i <= 3; i++) {
-            arr = new int[len];
+            if (len < i) {
+                break;
+            }
+            int[] arr = new int[len];
             for (int j = len - 1; j > len - 1 - i; j--) {
                 arr[j] = 1;
             }
@@ -54,11 +59,12 @@ public class 백준_15684_사다리조작 {
                     if (arr[j] != 0) {
                         int r = list.get(j)[0];
                         int c = list.get(j)[1];
-                        if (check[r][c] || check[r][c + 1]) {
+                        if (check[r][c] != 0 || check[r][c + 1] != 0) {
                             rollback(added);
                             continue loop;
                         }
-                        check[r][c] = check[r][c + 1] = true;
+                        check[r][c] = key++;
+                        check[r][c + 1] = key++;
                         added.add(j);
                     }
                 } // 선 긋기
@@ -91,18 +97,9 @@ public class 백준_15684_사다리조작 {
             int r = 1;
             int c = i;
             while (r < h + 1) {
-                if (check[r][c]) {
-                    if (!check[r][c + 1]) {
-                        --c;
-                        ++r;
-                        continue;
-                    }
-                    if (!check[r][c - 1]) {
-                        ++c;
-                        ++r;
-                        continue;
-                    }
-                    if (!check[r][c - 2]) {
+                if (check[r][c] != 0) {
+                    int to = (check[r][c] ^ 1);
+                    if (check[r][c - 1] == to) {
                         --c;
                     } else {
                         ++c;
@@ -121,7 +118,7 @@ public class 백준_15684_사다리조작 {
         int len = added.size();
         for (int i = 0; i < len; i++) {
             int[] now = list.get(added.get(i));
-            check[now[0]][now[1]] = check[now[0]][now[1] + 1] = false;
+            check[now[0]][now[1]] = check[now[0]][now[1] + 1] = 0;
         }
     }
 
@@ -132,9 +129,6 @@ public class 백준_15684_사다리조작 {
     }
 
     static boolean nextPermutation(int[] arr) {
-        if (arr.length == 0) {
-            return false;
-        }
         int i = arr.length - 1;
         while (i > 0 && arr[i - 1] >= arr[i]) {
             --i;
