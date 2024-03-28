@@ -91,6 +91,10 @@
 | | 소프티어 | [자동차 테스트](https://softeer.ai/practice/6247) | Lv.3 |
 | (24.03.22 ~ 24.03.24) | 백준 | [사다리 조작](https://www.acmicpc.net/problem/15684) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
 | | 소프티어 | [순서대로 방문하기](https://softeer.ai/practice/6246) | Lv.3 |
+| **week17** <br> (24.03.25 ~ 24.03.28) | 백준 | [IPv6](https://www.acmicpc.net/problem/3107) | <img src="https://static.solved.ac/tier_small/11.svg" height="25" align="center"/> |
+| | 소프티어 | [출퇴근길](https://softeer.ai/practice/6248) | Lv.3 |
+| (24.03.29 ~ 24.03.31) | 백준 | [종이 조각](https://www.acmicpc.net/problem/14391) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
+| | 프로그래머스 | [등굣길](https://school.programmers.co.kr/learn/courses/30/lessons/42898) | Lv.3 |
 
 <!-- problem table template
 
