@@ -5,54 +5,35 @@ public class IPv_6 {
     static StringBuilder sb;
 
     public static void main(String[] args) {
-        StringBuilder front = new StringBuilder();
-        StringBuilder rear = new StringBuilder();
-        sb = front;
 
         Scanner sc = new Scanner(System.in);
         String input = sc.next();
-        int N = input.length();
-        int length = 0;
+        input = input.replace("::", ":X:");
+        String[] address = input.split(":");
 
-        for (int i = 0; i < N; i++) {
-            if (input.charAt(i) == ':') {
-                if (length > 0) {
-                    sb.append(':');
-                }
-                sb = rear;
-                continue;
+        List<String> list = new ArrayList<>();
+        int insert = 0;
+        for (int i = 0; i < address.length; i++) {
+            if (address[i].equals("")) {
+                insert--;
+            } else if (address[i].equals("X")) {
+                insert += i;
+            } else {
+                list.add(address[i]);
             }
+        }
+
+        while (list.size() < 8) {
+            list.add(insert, "0000");
+        }
+
+        sb = new StringBuilder();
+        for (int i = 0; i < 8; i++) {
             if (i > 0) {
                 sb.append(':');
             }
-            int start = i;
-            while (i < N && input.charAt(i) != ':') {
-                i++;
-            }
-            append(input.substring(start, i));
-            length++;
+            sb.append(String.format("%4s", list.get(i)).replace(' ', '0'));
         }
-        sb = front;
-        appendZero(8 - length);
-        System.out.print(front);
-        System.out.print(rear);
-    }
-
-    static void appendZero(int cnt) {
-        if (cnt == 0) {
-            return;
-        }
-        while (cnt-- > 1) {
-            sb.append("0000:");
-        }
-        sb.append("0000");
-    }
-
-    static void append(String address) {
-        int cnt = 4 - address.length();
-        while (cnt-- > 0) {
-            sb.append(0);
-        }
-        sb.append(address);
+        System.out.println(sb);
     }
 }
