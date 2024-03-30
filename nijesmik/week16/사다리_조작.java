@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class 사다리_조작 {
     static int R, C, ans;
-    static boolean[][] right, left;
+    static boolean[][] visited;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -10,13 +10,12 @@ public class 사다리_조작 {
         int M = sc.nextInt();
         R = sc.nextInt();
 
-        right = new boolean[R][C + 2];
-        left = new boolean[R][C + 2];
+        visited = new boolean[R][C + 1];
 
         while (M-- > 0) {
             int r = sc.nextInt() - 1;
             int c = sc.nextInt();
-            right[r][c] = left[r][c + 1] = true;
+            visited[r][c] = true;
         }
 
         ans = -1;
@@ -39,19 +38,17 @@ public class 사다리_조작 {
 
         for (int i = 0; i < R; i++) {
             for (int j = 1; j < C; j++) {
-                if (!right[i][j] && !left[i][j] && !right[i][j+ 1] && !left[i][j + 1]) {
-                    right[i][j] = true;
-                    left[i][j + 1] = true;
+                if (!visited[i][j] && !visited[i][j - 1] && !visited[i][j + 1]) {
+                    visited[i][j] = true;
                     dfs(depth + 1, max);
-                    right[i][j] = false;
-                    left[i][j + 1] = false;
+                    visited[i][j] = false;
                 }
             }
         }
     }
 
     static boolean test() {
-        for (int i = 0; i < C; i++) {
+        for (int i = 1; i < C; i++) {
             if (!testColumn(i)) {
                 return false;
             }
@@ -62,9 +59,9 @@ public class 사다리_조작 {
     static boolean testColumn(int start) {
         int c = start;
         for (int i = 0; i < R; i++) {
-            if (right[i][c] && left[i][c + 1]) {
+            if (visited[i][c]) {
                 c++;
-            } else if (left[i][c] && right[i][c - 1]) {
+            } else if (visited[i][c - 1]) {
                 c--;
             }
         }
