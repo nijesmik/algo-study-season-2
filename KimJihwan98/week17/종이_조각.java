@@ -17,29 +17,63 @@ public class 종이_조각 {
     map = new int[N][M];
     visited = new boolean[N][M];
 
-  }
-  static void dfs(int r, int c, int sum) {
-    if(visited[r][c]) return;
-    if(r>N-1 || c > M-1) return;
-    if(check()) {
-      answer = Math.max(answer, sum);
-      return;
-    }
-    int idx = 0;
-
-    for(int i = r; i < N; i++) {
-      visited[i][c] = true;
-
-    }
-
-  }
-
-  static boolean check() {
     for(int i = 0; i < N; i++) {
-      for(int j= 0; j < M ;j++) {
-        if(!visited[i][j]) return false;
+      String s = br.readLine();
+      for(int j = 0; j < M; j++) {
+        map[i][j] = s.charAt(j) - '0';
       }
     }
-    return true;
+    dfs(0,0);
+    System.out.println(answer);
   }
+  static void dfs(int r, int c) {
+    if(r==N) {
+      sum();
+      return;
+    }
+    if(c==M) {
+      dfs(r+1, 0);
+      return;
+    }
+
+    visited[r][c] = true; // 지금 타일이 가로로 짤린 경우
+    dfs(r, c+1);
+
+    visited[r][c] = false; // 세로로 짤린 경우
+    dfs(r,c+1);
+  }
+
+  static void sum() {
+    int sum = 0;
+    for(int i = 0; i < N; i++) {
+      int temp = 0;
+      for(int j = 0; j < M; j++) {
+        if(visited[i][j]) {
+          temp *= 10;
+          temp += map[i][j];
+        } else {
+          sum += temp;
+          temp = 0;
+        }
+      }
+      sum += temp;
+    }
+
+    for(int i = 0; i < M; i++) {
+      int temp = 0;
+      for(int j = 0; j < N; j++) {
+        if(!visited[j][i]) {
+          temp *= 10;
+          temp += map[j][i];
+        } else {
+          sum += temp;
+          temp = 0;
+        }
+      }
+      sum += temp;
+    }
+
+    answer = Math.max(answer, sum);
+  }
+
 }
