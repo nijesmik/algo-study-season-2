@@ -95,6 +95,10 @@
 | | 소프티어 | [출퇴근길](https://softeer.ai/practice/6248) | Lv.3 |
 | (24.03.29 ~ 24.03.31) | 백준 | [종이 조각](https://www.acmicpc.net/problem/14391) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
 | | 프로그래머스 | [등굣길](https://school.programmers.co.kr/learn/courses/30/lessons/42898) | Lv.3 |
+| **week18** <br> (24.04.08 ~ 24.04.11) | 백준 | [직사각형 탈출](https://www.acmicpc.net/problem/16973) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
+| |  | [공주님의 정원](https://www.acmicpc.net/problem/2457) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
+| (24.04.12 ~ 24.04.14) |  | [합이 0](https://www.acmicpc.net/problem/3151) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
+| |  | [인싸들의 가위바위보](https://acmicpc.net/problem/16986) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
 
 <!-- problem table template
 
