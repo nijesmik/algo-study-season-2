@@ -1,11 +1,10 @@
-package y24Apr;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.StringTokenizer;
 
-public class Baek16973 {
+public class Main {
 
 
     static int N, M;
@@ -50,6 +49,7 @@ public class Baek16973 {
         qu.add(new pos(Sx, Sy, 0));
         vt[Sx][Sy] = 1;
         while (!qu.isEmpty()) {
+            //  System.out.println(qu.toString());
             pos tmp = qu.poll();
 
             if (tmp.x == Fx && tmp.y == Fy) {
@@ -61,11 +61,15 @@ public class Baek16973 {
                 int nx = tmp.x + dx[i];
                 int ny = tmp.y + dy[i];
                 if (nx == Fx && ny == Fy) {
-                    return tmp.cnt+1;
+                    return tmp.cnt + 1;
                 }
 
-                if (!checkCango(nx, ny)) continue;
+                if (nx < 0 || nx >= N || ny < 0 || ny >= M) {
+                    continue;
+                }
                 if (vt[nx][ny] == 1) continue;
+                if (!checkCango(nx, ny)) continue;
+
                 qu.add(new pos(nx, ny, tmp.cnt + 1));
                 vt[nx][ny] = 1;
             }
@@ -99,5 +103,11 @@ public class Baek16973 {
             this.y = y;
             this.cnt = cnt;
         }
+
+        @Override
+        public String toString() {
+            return this.x + " " + this.y + " " + this.cnt;
+        }
     }
 }
+
