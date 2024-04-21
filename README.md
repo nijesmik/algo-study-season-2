@@ -99,6 +99,10 @@
 | |  | [공주님의 정원](https://www.acmicpc.net/problem/2457) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
 | (24.04.12 ~ 24.04.14) |  | [합이 0](https://www.acmicpc.net/problem/3151) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
 | |  | [인싸들의 가위바위보](https://acmicpc.net/problem/16986) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
+| **week19** <br> (24.04.15 ~ 24.04.21) | 백준 | [카드 정렬하기](https://www.acmicpc.net/problem/1715) | <img src="https://static.solved.ac/tier_small/12.svg" height="25" align="center"/> |
+| |  | [소수의 연속합](https://www.acmicpc.net/problem/1644) | <img src="https://static.solved.ac/tier_small/13.svg" height="25" align="center"/> |
+| | 프로그래머스 | [불량 사용자](https://school.programmers.co.kr/learn/courses/30/lessons/64064) | Lv.3 |
+| |  | [길 찾기 게임](https://school.programmers.co.kr/learn/courses/30/lessons/42892) | Lv.3 |
 
 <!-- problem table template
 
