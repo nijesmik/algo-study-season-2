@@ -16,7 +16,7 @@ public class 인싸들의_가위바위보 {
         }
         gestures = new int[3][20];
         for (int i = 1; i < n; i++) {
-            gestures[0][i] = gestures[0][i - 1] + 1;
+            gestures[0][i] = i;
         }
         for (int i = 0; i < 20; i++) {
             gestures[1][i] = sc.nextInt() - 1;
@@ -32,7 +32,7 @@ public class 인싸들의_가위바위보 {
             if (testOne() == 0) {
                 return 1;
             }
-        } while (nextPermutation());
+        } while (nextPermutation(gestures[0]));
         return 0;
     }
 
@@ -41,21 +41,19 @@ public class 인싸들의_가위바위보 {
         for (int i = 0; i < 3; i++) {
             playerInfo[i] = new Player(i);
         }
-        int[] roundInfo = { 0, 1, 2 };
+        int[] roundInfo = { 0, 1 };
         while (playerInfo[0].round < n) {
             int winner = getWinner(playerInfo[roundInfo[0]], playerInfo[roundInfo[1]]);
             if (playerInfo[winner].win() == k) {
                 return winner;
             }
-            roundInfo[0] = winner;
-            roundInfo[1] = roundInfo[2];
-            roundInfo[2] = 3 - winner - roundInfo[1];
+            roundInfo[0] = 3 - roundInfo[0] - roundInfo[1];
+            roundInfo[1] = winner;
         }
         return -1;
     }
 
-    static boolean nextPermutation() {
-        int[] arr = gestures[0];
+    static boolean nextPermutation(int[] arr) {
         int top = n - 1;
         while (top > 0 && arr[top - 1] > arr[top]) {
             top--;
