@@ -83,7 +83,7 @@ public class 인싸들의_가위바위보 {
 
     static int getWinner(Player first, Player second) {
         int result = scorecard[first.gesture()][second.gesture()];
-        if (result == 2) {
+        if (result == 2 || (result == 1 && first.id > second.id)) {
             return first.id;
         }
         return second.id;
